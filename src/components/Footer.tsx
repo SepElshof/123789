@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <img
-                src="/logo.png"
+                src={`${import.meta.env.BASE_URL}logo.png`}
                 alt="Schoenmakerij De Leeuw"
                 className="h-10 w-auto object-contain brightness-0 invert opacity-90"
               />

@@ -35,7 +35,7 @@ export default function Header() {
         {/* Logo */}
         <NavLink to="/" className="flex items-center group">
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Schoenmakerij De Leeuw"
             className={`h-9 w-auto object-contain transition-all duration-300 group-hover:opacity-80 ${
               solidHeader ? "brightness-0" : "brightness-0 invert"

@@ -3,11 +3,12 @@ import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const base = import.meta.env.BASE_URL;
 const photos = [
-  { src: "/foto-4.png", alt: "Schoenmakerij De Leeuw" },
-  { src: "/foto-5.png", alt: "Schoenmakerij De Leeuw" },
-  { src: "/foto-2.png", alt: "Schoenmakerij De Leeuw" },
-  { src: "/foto-3.png", alt: "Schoenmakerij De Leeuw" },
+  { src: `${base}foto-4.png`, alt: "Schoenmakerij De Leeuw" },
+  { src: `${base}foto-5.png`, alt: "Schoenmakerij De Leeuw" },
+  { src: `${base}foto-2.png`, alt: "Schoenmakerij De Leeuw" },
+  { src: `${base}foto-3.png`, alt: "Schoenmakerij De Leeuw" },
 ];
 
 function Slideshow() {

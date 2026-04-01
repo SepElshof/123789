@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -297,31 +297,38 @@ export default function Home() {
               <Slideshow />
             </div>
 
-            {/* Address + phone */}
-            <div className="sm:col-span-2 flex flex-col gap-4">
-              <a
-                href="https://maps.google.com/?q=Eerste+van+Swindenstraat+62+Amsterdam"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3.5 bg-white rounded-2xl border border-stone-100 px-5 py-5 hover:border-stone-200 transition-colors group"
-              >
-                <MapPin className="w-4 h-4 text-brand-600 mt-0.5 shrink-0" />
-                <div>
-                  <p className="text-sm font-medium text-stone-900 group-hover:text-brand-600 transition-colors">
-                    Eerste van Swindenstraat 62
-                  </p>
-                  <p className="text-sm text-stone-500">1093 GG Amsterdam-Oost</p>
+            {/* Reviews */}
+            <div className="sm:col-span-2 grid sm:grid-cols-2 gap-3">
+              {[
+                {
+                  name: "Floris V.",
+                  text: "Geweldig! Zool van mijn Meindl bergschoen moest gelijmd worden, werd binnen een kwartier gedaan en volledig kostenloos! Bedankt!",
+                },
+                {
+                  name: "Lies D.",
+                  text: "Wat een topzaak! Super fijne service met héle betaalbare prijzen. Vanmiddag mijn kapotte laarzen gebracht, en kon ze in de namiddag al ophalen. Ik ga nooit meer ergens anders heen 🙌",
+                },
+                {
+                  name: "David K.",
+                  text: "Very nice and quick service. Brought in my shoes in the morning and picked them up the same afternoon, good as new. Thank you!",
+                },
+                {
+                  name: "Sarah M.",
+                  text: "First day of vacation w/ new shoes, of course, things didn't fit well, so I came here, and the owner gave me some great inserts for a good price. When I had some issues with the shoes rubbing, I came back and he gave me some heel guards for free. Doing good things, here!",
+                },
+              ].map((review) => (
+                <div key={review.name} className="bg-white rounded-2xl border border-stone-100 px-5 py-4 flex flex-col gap-2">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.05 2.927z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-stone-600 text-sm leading-relaxed">"{review.text}"</p>
+                  <p className="text-stone-400 text-xs font-medium">— {review.name}</p>
                 </div>
-              </a>
-              <a
-                href="tel:0206941580"
-                className="flex items-center gap-3.5 bg-white rounded-2xl border border-stone-100 px-5 py-5 hover:border-stone-200 transition-colors group"
-              >
-                <Phone className="w-4 h-4 text-brand-600 shrink-0" />
-                <span className="text-sm font-medium text-stone-900 group-hover:text-brand-600 transition-colors">
-                  020 694 1580
-                </span>
-              </a>
+              ))}
             </div>
 
           </div>
